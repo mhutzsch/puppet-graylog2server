@@ -32,11 +32,7 @@ class graylog2server (
   include graylog2server::service
 
   # create the user
-  graylog2server::user { $user:
-    user => $user,
-    home => $graylog2serverpath,
-    uid  => $uid,
-  }
+  include graylog2server::user
 
   file { $graylog2serverpath:
     ensure  => directory,

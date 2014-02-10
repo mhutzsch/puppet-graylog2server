@@ -1,21 +1,21 @@
 # class, which generates the graylog2 user
 # parameters passed throug main class graylog2server
 
-define graylog2server::user (
+class graylog2server::user (
   $user = undef,
   $home = undef,
   $uid  = undef) {
 
-  group { $user:
+  group { "$graylog2server::user":
     ensure => present,
-    gid    => $uid,
+    gid    => "$graylog2server::uid",
   }
 
-  user { $user:
+  user { "$graylog2server::user":
     ensure  => present,
-    home    => $home,
-    uid     => $uid,
-    gid     => $uid,
-    require => Group[$user]
+    home    => "$graylog2server::graylog2serverpath",
+    uid     => "$graylog2server::uid",
+    gid     => "$graylog2server::uid",
+    require => Group["$graylog2server::uid"]
   }
 }

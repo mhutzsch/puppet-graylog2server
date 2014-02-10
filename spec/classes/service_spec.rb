@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "graylog2server::service" do 
+
 let(:pre_condition) { 'include graylog2server' }
 let(:facts) {{:osfamily => "Debian"}}
 
