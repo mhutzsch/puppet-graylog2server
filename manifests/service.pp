@@ -13,7 +13,8 @@ class graylog2server::service {
     group  => 'root',
   }
 
-  file { '/var/log/graylog2server':
+  #notice("logpath: $graylog2server::logpath")
+  file { "$graylog2server::logpath":
     ensure => directory,
     mode   => '0755',
     owner  => 'graylog2',
@@ -50,6 +51,6 @@ class graylog2server::service {
     hasrestart => true,
     hasstatus  => true,
     provider   => 'runit',
-    require    => File['/var/log/graylog2server']
+    require    => File["$graylog2server::logpath"]
   }
 }
