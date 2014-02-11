@@ -51,6 +51,6 @@ class graylog2server::service {
     hasrestart => true,
     hasstatus  => true,
     provider   => 'runit',
-    require    => File["$graylog2server::logpath"]
+    require    => File["$graylog2server::logpath", "$graylog2server::serverpath/etc/graylog2.conf"]
   }
 }

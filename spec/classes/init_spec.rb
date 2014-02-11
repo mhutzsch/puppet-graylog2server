@@ -3,8 +3,8 @@ require 'spec_helper'
 describe 'graylog2server' do
   
   let (:params) { 
-    { :graylog2serverpath => '/opt/graylog', 
-      :mongodb            => 'false' }
+    { :serverpath => '/opt/graylog', 
+      :mongodb    => 'false' }
   }
 
   let(:facts) { { :osfamily  => 'Debian' } }

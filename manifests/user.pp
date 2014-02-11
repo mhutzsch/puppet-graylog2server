@@ -13,7 +13,7 @@ class graylog2server::user (
 
   user { "$graylog2server::user":
     ensure  => present,
-    home    => "$graylog2server::graylog2serverpath",
+    home    => "$graylog2server::serverpath",
     uid     => "$graylog2server::uid",
     gid     => "$graylog2server::uid",
     require => Group["$graylog2server::user"]

@@ -1,5 +1,5 @@
 #!/bin/bash
-CMD="java -jar <%= @graylog2serverpath %>/graylog2-server.jar"
-OPTIONS="-f <%= @graylog2serverpath %>/etc/graylog2.conf"
+CMD="java -jar <%= scope.lookupvar('graylog2server::serverpath') %>/graylog2-server.jar"
+OPTIONS="-f <%= scope.lookupvar('graylog2server::serverpath') %>/etc/graylog2.conf"
 
-exec chpst -u <%= @user %>:<%= @user %> $CMD $OPTIONS 2>&1
+exec chpst -u <%= scope.lookupvar('graylog2server::user') %>:<%= scope.lookupvar('graylog2server::user') %> $CMD $OPTIONS 2>&1
