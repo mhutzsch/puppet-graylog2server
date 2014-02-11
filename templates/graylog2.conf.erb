@@ -44,7 +44,7 @@ rest_transport_uri = <%= scope.lookupvar('graylog2server::rest_transport_uri') %
 # Embedded elasticsearch configuration file
 # pay attention to the working directory of the server, maybe use an absolute path here
 
-elasticsearch_config_file = <%= scope.lookupvar('graylog2server::elasticsearch_config_file') %>
+#elasticsearch_config_file = <%= scope.lookupvar('graylog2server::elasticsearch_config_file') %>
 elasticsearch_max_docs_per_index = <%= scope.lookupvar('graylog2server::elasticsearch_max_docs_per_index')%>
 
 # How many indices do you want to keep?
@@ -61,7 +61,7 @@ retention_strategy = <%= scope.lookupvar('graylog2server::retention_stragey') %>
 elasticsearch_shards = <%= scope.lookupvar('graylog2server::elasticsearch_shards') %>
 elasticsearch_replicas = <%= scope.lookupvar('graylog2server::elasticsearch_replicas') %>
 
-elasticsearch_index_prefix = <%= scope.lookupvar('graylog2server::elasticsearch_index_prefix') %> graylog2
+elasticsearch_index_prefix = <%= scope.lookupvar('graylog2server::elasticsearch_index_prefix') %>
 
 # Do you want to allow searches with leading wildcards? This can be extremely resource hungry and should only
 # be enabled with care. See also: http://support.torch.sh/help/kb/graylog2-web-interface/the-search-bar-explained
@@ -121,7 +121,7 @@ processor_wait_strategy = <%= scope.lookupvar('graylog2server::processor_wait_st
 # For optimum performance your LogMessage objects in the ring buffer should fit in your CPU L3 cache.
 # Start server with --statistics flag to see buffer utilization.
 # Must be a power of 2. (512, 1024, 2048, ...)
-ring_size = <% scope.lookupvar('graylog2server::ring_size') %>
+ring_size = <%= scope.lookupvar('graylog2server::ring_size') %>
 
 # MongoDB Configuration
 mongodb_host = <%= scope.lookupvar('graylog2server::mongodb_host') %>

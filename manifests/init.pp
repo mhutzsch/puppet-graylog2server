@@ -40,8 +40,6 @@
 #         * the uri where graylog2 server can receive rest calls
 # rest_transport_uri
 #         * promoted by graylog2 server for other nodes
-# elasticsearch_config_file
-#         * where does the graylog2server find its elasticsearch config
 # elasticsearch_max_docs_per_indes
 #         * how many messages are stored in elasticsearch cluster per index
 # elasticsearch_max_number_of_indices
@@ -138,7 +136,6 @@ class graylog2server (
   $plugin_dir                                         = 'plugin',
   $rest_listen_uri                                    = "http://$::ipaddress:12900/",
   $rest_transport_uri                                 = "http://$::ipaddress:12900/",
-  $elasticsearch_config_file                          = '/etc/graylog2-elasticsearch.yml',
   $elasticsearch_max_docs_per_index                   = '20000000',
   $elasticsearch_max_number_of_indices                = '20',
   $retention_strategy                                 = 'delete',
