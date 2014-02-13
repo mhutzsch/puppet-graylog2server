@@ -126,7 +126,7 @@ class graylog2server (
   $user                                               = 'graylog2',
   $uid                                                = 1042,
   $run                                                = true,
-  $version                                            = '0.20.0-rc.1-1',
+  $version                                            = '0.20.0-rc.2',
   $logpath                                            = '/var/log/graylog2server',
   $mongodb                                            = true,
   $is_master                                          = 'true',
