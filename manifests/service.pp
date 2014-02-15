@@ -2,10 +2,6 @@
 
 class graylog2server::service {
 
-  package { 'runit':
-    ensure => installed,
-  }
-
   file { '/etc/sv/graylog2server':
     ensure => directory,
     mode   => '0755',
