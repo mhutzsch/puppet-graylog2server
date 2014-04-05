@@ -1,7 +1,7 @@
-puppet-graylog2server
+puppet-graylog2web
 =====================
 
-Installs the graylog2 Server (version 0.20.0-rc.1-1)
+Installs the graylog2 web interface (version 0.20.1)
 
 Usage
 =====
@@ -10,10 +10,9 @@ clone the repo to your puppet module_path
 add the class wherever it fits (eg. nodes.pp)
 
 ```
-class {"graylog2server":}
+class {"graylog2web":}
 ```
 
-There are many params you can overwrite when you include the graylog2server class.
 See init.pp for details
 
 Dependencies
@@ -26,12 +25,6 @@ package {"runit":
   ensure => installed
 }
 ```
-
-when using mongodb installation from this module, the puppetlabs apt module is requierd:
-https://github.com/puppetlabs/puppetlabs-apt
-
-Its highly recommended to install your elasticsearch-cluster with this puppet module:
-https://github.com/elasticsearch/puppet-elasticsearch
 
 Finally
 =======

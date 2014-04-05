@@ -126,7 +126,7 @@ class graylog2server (
   $user                                               = 'graylog2',
   $uid                                                = 1042,
   $run                                                = true,
-  $version                                            = '0.20.0-rc.3',
+  $version                                            = '0.20.1',
   $logpath                                            = '/var/log/graylog2server',
   $mongodb                                            = true,
   $is_master                                          = 'true',
@@ -209,7 +209,7 @@ class graylog2server (
     command => "wget https://github.com/Graylog2/graylog2-server/releases/download/${version}/graylog2-server-${version}.tgz -O ${serverpath}/package.tgz;
       tar xvfz package.tgz;
       rm -rf package.tgz;
-      mv graylog2-server-${version}/* ${serverpath};
+      cp -R graylog2-server-${version}/* ${serverpath};
       rm -rf graylog2-server-${version}",
     path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
     cwd     => $serverpath,
