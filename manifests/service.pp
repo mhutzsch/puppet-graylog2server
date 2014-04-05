@@ -11,10 +11,11 @@ class graylog2server::service {
 
   #notice("logpath: $graylog2server::logpath")
   file { "$graylog2server::logpath":
-    ensure => directory,
-    mode   => '0755',
-    owner  => 'graylog2',
-    group  => 'graylog2',
+    ensure  => directory,
+    mode    => '0755',
+    owner   => 'graylog2',
+    group   => 'graylog2',
+    require => Exec ['download and unpack graylog2-server']
   }
 
   file { '/etc/sv/graylog2server/run':
